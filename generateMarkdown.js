@@ -13,8 +13,11 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-
+[![License](https://img.shields.io/badge/License-${data.License}-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {generateMarkdown};
+
+// const age =52 
+// `will smith is ${age} years old`
