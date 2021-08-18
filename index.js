@@ -8,43 +8,43 @@ inquirer
     .prompt([
         {
             type: "input",
-            name:"Application Title",
+            name:"title",
             message: "What is the name of your application?",
         },
         {
             type: "input",
-            name:"Description",
+            name:"description",
             message: "Describe your application:",
         },
         {
             type: "input",
-            name:"Table of Contents",
+            name:"contents",
             message: "What is included in your project?",
         },
         {
             type: "input",
-            name:"Installation",
+            name:"installation",
             message: "How do you install your application?",
         },
         {
             type: "input",
-            name:"Usage",
+            name:"usage",
             message: "How will this project be used?",
         },
         {
             type: "list",
-            name:"License",
+            name:"license",
             message: "What license did you use?",
             choices: ["MIT", "ISC", "Apache License 2.0", "n/a"],
         },
         {
             type: "input",
-            name:"Contributions",
+            name:"contributions",
             message: "What are your contributions?",
         },
         {
             type: "input",
-            name:"Tests",
+            name:"tests",
             message: "What tests have you performed?",
         },
         {
@@ -54,12 +54,18 @@ inquirer
         }
     ])
     // create .then
-    .then((response) =>{
-        console.log(response.questions)
-    })
+    .then((data) =>{
+        const generateMarkdown = `${data.title.toLowerCase().split(' ').join('')}.md`
+        console.log(data.questions);
+
+        fs. writeFile(generateMarkdown, JSON.stringify(data, null, '\t'), (err) =>
+        err ? console.log(err) : console.log('Success!')
+        );
+    });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
+
 
 // TODO: Create a function to initialize app
 function init() {}
