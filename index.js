@@ -56,10 +56,10 @@ inquirer
     // create .then
     .then((data) =>{
         const generateMarkdown = `${data.title.toLowerCase().split(' ').join('')}.md`
-        console.log(data.questions);
+        // console.log(data.questions);
 
         fs. writeFile(generateMarkdown, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('Success!')
+        err ? console.log(err) : console.log('README has been generated!')
         );
     });
 
