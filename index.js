@@ -8,67 +8,71 @@ inquirer
     .prompt([
         {
             type: "input",
-            name:"title",
+            name: "title",
             message: "What is the name of your application?",
         },
         {
             type: "input",
-            name:"description",
+            name: "description",
             message: "Describe your application:",
         },
         {
             type: "input",
-            name:"contents",
+            name: "contents",
             message: "What is included in your project?",
         },
         {
             type: "input",
-            name:"installation",
+            name: "installation",
             message: "How do you install your application?",
         },
         {
             type: "input",
-            name:"usage",
+            name: "usage",
             message: "How will this project be used?",
         },
         {
             type: "list",
-            name:"license",
+            name: "license",
             message: "What license did you use?",
             choices: ["MIT", "ISC", "Apache License 2.0", "n/a"],
         },
         {
             type: "input",
-            name:"contributions",
+            name: "contributions",
             message: "What are your contributions?",
         },
         {
             type: "input",
-            name:"tests",
+            name: "tests",
             message: "What tests have you performed?",
         },
         {
             type: "input",
-            name:"questions",
+            name: "questions",
             message: "If you have any questions, please reach me:",
         }
     ])
     // create .then
-    .then((data) =>{
-        const generateMarkdown = `${data.title.toLowerCase().split(' ').join('')}.md`
-        // console.log(data.questions);
+    .then((data) => {
+        const newFile = `${data.title.toLowerCase().split(' ').join('')}.md`;
+   
+        fs.writeFile(newFile, JSON.stringify(data,null,"\t"), (err)=>
+            err ? console.log(err) : console.log("README has been generated")
+        ); 
+    })
 
-        fs. writeFile(generateMarkdown, JSON.stringify(data, null, '\t'), (err) =>
-        err ? console.log(err) : console.log('README has been generated!')
-        );
-    });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+    
+// writeToFile(title,generateMarkdown)
+// // TODO: Create a function to write README file
+// function writeToFile(newFile, generateMarkdown) {
+//     `${data.title.toLowerCase().split(' ').join('')}.md`
+// }
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
