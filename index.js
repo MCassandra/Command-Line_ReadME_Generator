@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("./generateMarkdown")
+const generateMarkdown = require("./generateMarkdown.js")
 // markdown
 // TODO: Create an array of questions for user input
 inquirer
@@ -49,15 +49,21 @@ inquirer
         },
         {
             type: "input",
-            name: "questions",
-            message: "If you have any questions, please reach me:",
+            name: "github",
+            message: "If you need to reach me this is my GitHub:",
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "If you need to reach me this is my Email:",
         }
     ])
     // create .then
     .then((data) => {
         const newFile = `${data.title.toLowerCase().split(' ').join('')}.md`;
+        // console.log(generateMarkdown(data))
    
-        fs.writeFile(newFile, JSON.stringify(data,null,"\t"), (err)=>
+        fs.writeFile(newFile, generateMarkdown(data), (err)=>
             err ? console.log(err) : console.log("README has been generated")
         ); 
     })
