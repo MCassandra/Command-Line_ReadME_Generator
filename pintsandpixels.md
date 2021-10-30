@@ -12,9 +12,9 @@
 ## Description
 Pixels & Pints is a way to find and save a drink, no matter your location. Fueled by wanderlust and the desire to share a pitcher among friends, group Ichiban created Pixels and Pints for the everyday person, the average person who wants to find something new.
 ### Installation 
-n/a
+Use the live github page!
 ### Usage 
-for fun!
+for fun
 ### Contributions 
 saving like breweries
 ### Tests
