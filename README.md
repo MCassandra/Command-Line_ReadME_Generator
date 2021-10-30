@@ -12,4 +12,4 @@ This application is a command-line README generator using Node.js and Inquirer. 
 ![user answers prompt questions to create a README file](assets/screenshot.jpeg)
 
 Repository: https://github.com/MCassandra/Command-Line_ReadME_Generator
-Video tutorial: 
+Video tutorial: https://drive.google.com/file/d/1tp4XYLcA1XTjNrlo5kcFNbxiCVdNgjYH/view?usp=sharing
